@@ -3,6 +3,7 @@
 # Script Purpose: Install Snapd for install of SSL
 # Script Creater: Adam Sawtell
 # Created: 12/02/2023
+# Notes: 
 
 echo "flamingologic.com.au"
 
