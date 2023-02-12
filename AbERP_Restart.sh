@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Script Purpose: Restart AbilityERP (iDempiere) service - restart
-# Script Name: aberprestart.sh
+# Script Name: aberpquickrestart.sh
 # Script Creater: Adam Sawtell
 # Created: 12/02/2023
 # Notes: 
