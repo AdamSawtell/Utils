@@ -1,12 +1,23 @@
 #!bin/bash
 
-# Script Purpose: Update a clone of Production into a test or development environment
+# Script Purpose: To update a clone of Production into a Test or Development environment
+# Script Name: aberp_environemnt_update_test_dev.sh
 # Script Creater: Adam Sawtell
 # Created: 
+# Notes: 
 
-echo 
+echo "flamingologic.com.au"
 
-echo "This script will change this environment int ao test or development build."
+echo "***"
+sleep 1
+echo "**"
+sleep 1
+echo "*"
+
+
+
+
+echo "This script will change this environment int a test or development build."
 
 
 #Environment changes 
