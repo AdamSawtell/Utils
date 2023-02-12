@@ -36,8 +36,24 @@ update ad_sysconfig set value = "N" where ad_sysconfig_id = "200014";
 
 update ad_sysconfig set value = "N" where ad_sysconfig_id = "200205";
 
-# Updating server name
+# Updating host name
+        echo "Updating host name" 
 
+echo " What type of environment will thes be: d for Development or t for Test? (d/t)"
+
+read Test
+
+if [[ $Test == "d" ]]; then
+
+sudo hostnamectl set-hostname Dev
+        echo "Host name changed to Dev, Please re log into environment"
+
+else
+
+sudo hostnamectl set-hostname Test
+        echo "Host name changed to Test, Please re log into environment"
+
+fi
 
 
 # Restarting AbilityERP
