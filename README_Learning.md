@@ -1,7 +1,7 @@
 The purpose of this file is to save known commands and information
 
 Must start bash script with
--       #!bin/bash
+- #!/bin/bash
 
 Create a new excutable.sh file – 
 nano ((script name).sh)
@@ -26,4 +26,11 @@ chmod +x (script name)
 Run script – 
 ./(add script)
 
+Set a variable - $
+- Used the $ sign
+-       Set the variable by name
+-       Example: myname="Adam"
+-               To rwcall that variable in the script - Example: $myname
 
+Delete an entire line
+- CTRL k
