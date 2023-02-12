@@ -1,10 +1,10 @@
 #!/bin/bash
 
-# Script Purpose: To update a clone of Production into a Test or Development environment
-# Script Name: aberp_environemnt_update_test_dev.sh
+# Script Purpose: Learnning script to update database
+# Script Name: updateenv.sh
 # Script Creater: Adam Sawtell
-# Created: 
-# Notes: 
+# Created: 12/02/2023
+# Notes:
 
 echo "flamingologic.com.au"
 
@@ -14,22 +14,89 @@ echo "**"
 sleep 1
 echo "*"
 
+echo "This script will update your build from a Production/ Pristine clone to a test/ Dev environment."
+
+sleep 2
+
+echo "*"
+
+# Change the name build on browser tab
+        echo "Updating browser name"
+
+update ad_sysconfig set value = "Build Test AS" where ad_sysconfig_id = "1000003";
+
+
+# Update from using email login to name
+        echo "Updating from emil login to name login"
+
+update ad_sysconfig set value = "N" where ad_sysconfig_id = "200014";
+
+# Turn of SSO
+        echo "Updating SSO value to No"
+
+update ad_sysconfig set value = "N" where ad_sysconfig_id = "200205";
+
+# Updating server name
 
 
 
-echo "This script will change this environment int a test or development build."
+# Restarting AbilityERP
+        echo "AbilityERP (iDempiere) requires a restart fro updated items to configure"
+
+echo "Stopping AbilityERP (iDempiere) Service."
+
+sudo service idempiere stop
+
+if [ $? -eq 0 ]
+then
+  echo "AbilityERP (iDempeire) was successfully Stopped"
+  date
+else
+  echo "Stop process failed"
+fi
+
+echo "Starting AbilityERP (iDempiere) Service."
+
+sleep 30
+
+sudo service idempiere start
+
+if [ $? -eq 0 ]
+then
+  echo "AbilityERP (iDempeire) was successfully Started"
+  date
+else
+  echo "Start process failed"
+fi
+
+sleep 1
+
+echo "Please wait 60 seconds for AbilityERP (iDempiere) to become available, check your AbilityERP (iDempiere) service is active by."
+
+sleep 3
+
+echo "1 - using command: sudo systemctl status idempeire"
+
+sleep 1
+
+echo "2 - Logging in via your WebUI"
+
+echo "***"
+sleep 1
+echo "**"
+sleep 1
+echo "*"
+
+sleep 1
+
+echo "Finished"
+
+echo "*"
+
+sleep 2
+
+echo "flamingologic.com.au"
+
+echo "*"
 
 
-#Environment changes 
-
--#
-
-
-#Database changes
-
--#SSO off: Update from Y to N
-	system configurator> ENABLE_SSO> Confugured value: N
--#Email login:Update from Y to N
-	system configurator> USE_EMAIL_FOR_LOGIN> Confugured value: N
--#Webname
-	system configurator> ZK_BROWSER_TITLE> Confugured 
