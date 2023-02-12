@@ -54,6 +54,25 @@ Not Equal
 Greater than
 - value: -gt
 
+If statment
+- Opens with: if
+- Closes with: fi
+
+Exit code
+- Success of failure of command
+
+Command: $?
+- Success = 0
+- Failure = 2
+
+Example - 
+if [ $? -eq 0 ]
+then
+  echo "AbilityERP (iDempeire) was successfully Stopped"
+  date
+else
+  echo "Process failed"
+fi
 
 
 
