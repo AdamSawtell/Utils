@@ -19,7 +19,7 @@ echo "You are about to stop and start your AbilityERP (iDempiere) service, ensur
 
 sleep 2
 
-echo "You have 10 seconds to abort process if not required."
+echo "*****You have 10 seconds to abort process if not required."
 
 sleep 5
 
@@ -36,43 +36,35 @@ echo "Stopping AbilityERP (iDempiere) Service."
 
 sudo service idempiere stop
 
-echo "*****Sleeping for 30 seconds to allow AbilityERP (iDempiere) to stop."
+if [ $? -eq 0 ]
+then
+  echo "AbilityERP (iDempeire) was successfully Stopped"
+  date
+else
+  echo "Process failed"
+fi
 
-sleep 15
+echo "Starting AbilityERP (iDempiere) Service."
 
-echo "AbilityERP (iDempeire) service stopping - 15 seconds to go"
-
-sleep 11
-
-echo "****4"
-sleep 1
-echo "***3"
-sleep 1
-echo "**2"
-sleep 1
-echo "*1"
-sleep 1
+sleep 30
 
 echo "Starting AbilityERP (iDempiere) Service."
 
 sudo service idempiere start
 
-echo "*****Sleeping for 10 seconds to allow AbilityERP (iDempiere) to start."
+if [ $? -eq 0 ]
+then
+  echo "AbilityERP (iDempeire) was successfully Started"
+  date
+else
+  echo "Process failed"
+fi
 
-sleep 10
+sleep 3
 
 echo "Checking AbilityERP (iDempiere) status."
 
 sleep 3
-
-echo "****4"
-sleep 1
-echo "***3"
-sleep 1
-echo "**2"
-sleep 1
-echo "*1"
-sleep 1
 
 echo "AbilityERP (iDempiere) Service is Active and was started at:"
 
