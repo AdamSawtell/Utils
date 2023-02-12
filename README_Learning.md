@@ -74,6 +74,10 @@ else
   echo "Process failed"
 fi
 
+Change hostname
+- sudo hostnamectl set-hostname (ADD NAME)
+- Example: sudo hostnamectl set-hostname Dev
+
 
 
 
