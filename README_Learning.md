@@ -28,9 +28,35 @@ Run script –
 
 Set a variable - $
 - Used the $ sign
--       Set the variable by name
--       Example: myname="Adam"
--               To rwcall that variable in the script - Example: $myname
+- Set the variable by name
+- Example: myname="Adam"
+- To recall that variable in the script - Example: $myname
+
+- To set a ENV variable
+- Example: now=$(date)
+- To recall that variable in the script - Example: $now 
+
+Variables
+- UPPER CASE - Environment variable (System)
+- lower case - User defind
 
 Delete an entire line
 - CTRL k
+
+Number: doing maths
+- expr (add caculation)
+- Example: expr 10 + 10
+
+Equals
+- value: -eq
+Not Equal
+- value: -ne
+Greater than
+- value: -gt
+
+
+
+
+
+
+
