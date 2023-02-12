@@ -60,18 +60,6 @@ fi
 
 sleep 3
 
-echo "Checking AbilityERP (iDempiere) status."
-
-sleep 3
-
-echo "AbilityERP (iDempiere) Service is Active and was started at:"
-
-echo "*"
-
-date
-
-sleep 5
-
 echo "***"
 sleep 1
 echo "**"
