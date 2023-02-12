@@ -30,6 +30,14 @@ sudo hostnamectl set-hostname Test
 
 fi
 
+echo "***"
+sleep 1
+echo "**"
+sleep 1
+echo "*"
+
+sleep 1
+
 echo "You will need to log out and back into enviroment for change to update" 
 
 echo "***"
