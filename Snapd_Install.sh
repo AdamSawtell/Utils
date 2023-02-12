@@ -1,4 +1,4 @@
-#!bin/bash
+#!/bin/bash
 
 # Script Purpose: Install Snapd for install of SSL
 # Script Creater: Adam Sawtell
