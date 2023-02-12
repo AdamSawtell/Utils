@@ -1,10 +1,18 @@
 #!bin/bash
 
 # Script Purpose: Restart AbilityERP (iDempiere) service - Stop and start
+# Script Name: aberpstartstop.sh
 # Script Creater: Adam Sawtell
 # Created: 12/02/2023
+# Notes: 
 
 echo "flamingologic.com.au"
+
+echo "***"
+sleep 1
+echo "**"
+sleep 1
+echo "*"
 
 echo "You are about to stop and start your AbilityERP (iDempiere) service, ensure no active users are logged in."
 
