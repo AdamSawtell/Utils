@@ -1,4 +1,4 @@
-#!bin/bash
+#!/bin/bash
 
 # Script Purpose: To update a clone of Production into a Test or Development environment
 # Script Name: aberp_environemnt_update_test_dev.sh
