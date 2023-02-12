@@ -1,4 +1,4 @@
-#!bin/bash
+#!/bin/bash
 
 # Script Purpose: Restart AbilityERP (iDempiere) service - Stop and start
 # Script Name: aberpstartstop.sh
