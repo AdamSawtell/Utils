@@ -6,7 +6,6 @@
 # Created: 12/02/2023
 # Notes: 
 
-now=(date)
 
 echo "flamingologic.com.au"
 
@@ -76,7 +75,10 @@ echo "*1"
 sleep 1
 
 echo "AbilityERP (iDempiere) Service is Active and was started at:"
-echo $now
+
+echo "*"
+
+date
 
 sleep 5
 
