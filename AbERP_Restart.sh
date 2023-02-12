@@ -9,20 +9,33 @@
 
 echo "flamingologic.com.au"
 
-echo "Stopping AbilityERP (iDempiere) Service: Action time 60 seconds."
+echo "Stopping AbilityERP (iDempiere) Service."
 
 sudo service idempiere stop
 
-sleep 60
+if [ $? -eq 0 ]
+then
+  echo "AbilityERP (iDempeire) was successfully Stopped"
+  date
+else
+  echo "Stop process failed"
+fi
 
-echo "Starting AbilityERP (iDempiere) Service: Action time 30 seconds."
-
-sudo service idempiere start
+echo "Starting AbilityERP (iDempiere) Service."
 
 sleep 30
 
-date
+sudo service idempiere start
+
+if [ $? -eq 0 ]
+then
+  echo "AbilityERP (iDempeire) was successfully Started"
+  date
+else
+  echo "Start process failed"
+fi
 
 echo "Finished"
 
 echo "flamingologic.com.au"
+
