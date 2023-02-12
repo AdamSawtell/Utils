@@ -44,7 +44,7 @@ else
   echo "Process failed"
 fi
 
-sleep 30
+sleep 15
 
 echo "Starting AbilityERP (iDempiere) Service."
 
