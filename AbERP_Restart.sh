@@ -19,7 +19,7 @@ echo "Starting AbilityERP (iDempiere) Service: Action time 30 seconds."
 
 sudo service idempiere start
 
-Sleep 30
+sleep 30
 
 date
 
