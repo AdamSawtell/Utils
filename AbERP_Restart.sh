@@ -9,16 +9,20 @@
 
 echo "flamingologic.com.au"
 
-echo "Restarting AblityERP (iDempiere)"
-
-echo "Stopping AbilityERP (iDempiere) Service."
+echo "Stopping AbilityERP (iDempiere) Service: Action time 60 seconds."
 
 sudo service idempiere stop
 
 sleep 60
 
-echo "Starting AbilityERP (iDempiere) Service."
+echo "Starting AbilityERP (iDempiere) Service: Action time 30 seconds."
 
 sudo service idempiere start
+
+Sleep 30
+
+date
+
+echo "Finished"
 
 echo "flamingologic.com.au"
