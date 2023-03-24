@@ -24,6 +24,8 @@ echo "*"
 
 # Update System Config Value
 
+echo "Updating AbilityERP (iDempiere) System Configuration to a TEST/ Dev Environment"
+
 ECHO
 
 PGUSER=adempiere
@@ -48,5 +50,37 @@ UPDATE ad_sysconfig WHERE ad_sysconfig_id = 1000001 SET value = https://fllogo.s
 
 # Update ZL Logo Large (Login Page)  Image
 UPDATE ad_sysconfig WHERE ad_sysconfig_id = 1000000 SET value = https://fllogo.s3.us-east-2.amazonaws.com/test+Flamingo+Logic+Small+pic.jpg
+
+# Restarting AbilityERP (iDempiere) Service
+
+echo "Restarting AbilityERP (iDempiere) Service"
+
+echo "Stopping AbilityERP (iDempiere) Service."
+
+sudo service idempiere stop
+
+if [ $? -eq 0 ]
+then
+  echo "AbilityERP (iDempeire) was successfully Stopped"
+  date
+else
+  echo "Stop process failed"
+fi
+
+echo "Starting AbilityERP (iDempiere) Service."
+
+sleep 30
+
+sudo service idempiere start
+
+if [ $? -eq 0 ]
+then
+  echo "AbilityERP (iDempeire) was successfully Started"
+  date
+else
+  echo "Start process failed"
+fi
+
+echo "Finished"
 
 EOF
