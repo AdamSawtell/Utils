@@ -9,6 +9,8 @@
 # - Disable Sigles Sign On (SSO)
 # - Update Use Email For Login to No
 # - Update the Browser title
+# - Update ZK Logo Small (Menu Page) Image
+# - Update ZL Logo Large (Login Page)  Image
 
 
 echo "flamingologic.com.au"
@@ -41,7 +43,10 @@ UPDATE ad_sysconfig WHERE ad_sysconfig_id = 200214 SET value = N
 # Update the ZK Browser title
 UPDATE ad_sysconfig WHERE ad_sysconfig_id = 200003 SET value = AbERP TEST Site
 
-# Update Login Image
+# Update ZK Logo Small (Menu Page) Image
+UPDATE ad_sysconfig WHERE ad_sysconfig_id = 1000001 SET value = https://fllogo.s3.us-east-2.amazonaws.com/test+Flamingo+Logic+1+pic.jpg
+
+# Update ZL Logo Large (Login Page)  Image
 UPDATE ad_sysconfig WHERE ad_sysconfig_id = 1000000 SET value = ######
 
 EOF
