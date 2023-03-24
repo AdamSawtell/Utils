@@ -1,0 +1,17 @@
+#!/bin/bash
+
+# Update System Config Value
+
+ECHO
+
+PGUSER=adempiere
+PGPASSWORD=flamingo
+PGHOST=3.27.10.3
+PGPORT=5432
+PGDATABASE=idempiere
+
+psql "postgresql://${PGUSER}:${PGPASSWORD}@${PGHOST}:${PGPORT}/${PGDATABASE}" << EOF
+
+# Disable Single Sign On (SSO)
+UPDATE ad_sysconfig WHERE ad_sysconfig_id = 200205 SET value = N
+EOF
