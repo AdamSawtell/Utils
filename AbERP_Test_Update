@@ -47,6 +47,6 @@ UPDATE ad_sysconfig WHERE ad_sysconfig_id = 200003 SET value = AbERP TEST Site
 UPDATE ad_sysconfig WHERE ad_sysconfig_id = 1000001 SET value = https://fllogo.s3.us-east-2.amazonaws.com/test+Flamingo+Logic+1+pic.jpg
 
 # Update ZL Logo Large (Login Page)  Image
-UPDATE ad_sysconfig WHERE ad_sysconfig_id = 1000000 SET value = ######
+UPDATE ad_sysconfig WHERE ad_sysconfig_id = 1000000 SET value = https://fllogo.s3.us-east-2.amazonaws.com/test+Flamingo+Logic+Small+pic.jpg
 
 EOF
