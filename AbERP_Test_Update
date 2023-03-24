@@ -1,5 +1,25 @@
 #!/bin/bash
 
+# Script Purpose: To create a test or dev enviroment from a Production enviroment
+# Script Name: AbEERP Test Update
+# Script Creater: Adam Sawtell
+# Created: 25/03/2023
+# Notes: 
+# Outcomes:
+# - Disable Sigles Sign On (SSO)
+# - Update Use Email For Login to No
+# - Update the Browser title
+
+
+echo "flamingologic.com.au"
+
+echo "***"
+sleep 1
+echo "**"
+sleep 1
+echo "*"
+
+
 # Update System Config Value
 
 ECHO
@@ -14,4 +34,14 @@ psql "postgresql://${PGUSER}:${PGPASSWORD}@${PGHOST}:${PGPORT}/${PGDATABASE}" <<
 
 # Disable Single Sign On (SSO)
 UPDATE ad_sysconfig WHERE ad_sysconfig_id = 200205 SET value = N
+
+# Update Use Email For Login to No
+UPDATE ad_sysconfig WHERE ad_sysconfig_id = 200214 SET value = N
+
+# Update the ZK Browser title
+UPDATE ad_sysconfig WHERE ad_sysconfig_id = 200003 SET value = AbERP TEST Site
+
+# Update Login Image
+UPDATE ad_sysconfig WHERE ad_sysconfig_id = 1000000 SET value = ######
+
 EOF
