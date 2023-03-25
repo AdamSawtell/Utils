@@ -24,13 +24,13 @@ echo "**"
 sleep 1
 echo "*"
 
-echo "Please enter client id:"
+echo "Please enter client id - this is unique to the customers build:"
 read var1
 
-echo "Please enter Envirnment IP address:"
+echo "Please enter envirnment IP address:"
 read var2
 
-echo "Please enter browser title:"
+echo "Please enter browser title for new site:"
 read var3
 
 
@@ -66,6 +66,20 @@ echo "Bash updated for developer"
 
 echo "Updating AbilityERP (iDempiere) System Configuration to a non production environment"
 
+sleep 3
+
+echo "Disable SSO"
+echo "Disable Email Client"
+echo "Disable Email Login"
+echo "Updating Browser Title"
+echo "Updating Logos"
+
+echo "***"
+sleep 1
+echo "**"
+sleep 1
+echo "*"
+
 PGUSER=adempiere
 PGPASSWORD=flamingo
 PGHOST=${environment_ip}
@@ -74,34 +88,30 @@ PGDATABASE=idempiere
 
 psql "postgresql://${PGUSER}:${PGPASSWORD}@${PGHOST}:${PGPORT}/${PGDATABASE}" << EOF
 
-echo "Updating AbilityERP (iDempiere) System Configuration"
-
-# Disable Single Sign On (SSO)
-echo "Disable SSO"
 UPDATE ad_sysconfig SET value = 'N' WHERE ad_sysconfig_id = 200205;
 
-# Disable Client Email Host/ Server
-echo "Disable Email Client"
 UPDATE ad_client SET smtphost = 'Disabled' WHERE ad_client_id = ${ad_client_id};
 UPDATE ad_client SET description = 'Email Host Disabled - This is a Test site' WHERE ad_client_id = ${ad_client_id};
 
-# Update Use Email For Login to No
-echo "Disable Email Login"
 UPDATE ad_sysconfig SET value = 'N' WHERE ad_sysconfig_id = 200014;
 
-# Update the ZK Browser title
-echo "Updating Browser Title"
 UPDATE ad_sysconfig SET value = '${browser_title}' WHERE ad_sysconfig_id = 1000003;
 
-# Update ZK Logo Small (Menu Page) Image
-echo "Updating Logos"
 UPDATE ad_sysconfig SET value = 'https://fllogo.s3.us-east-2.amazonaws.com/test+Flamingo+Logic+1+pic.jpg' WHERE ad_sysconfig_id = 1000001;
 
-# Update ZL Logo Large (Login Page)  Image
 UPDATE ad_sysconfig SET value = 'https://fllogo.s3.us-east-2.amazonaws.com/test+Flamingo+Logic+1+pic.jpg' WHERE ad_sysconfig_id = 1000000;
 
+EOF
 
 # Restarting AbilityERP (iDempiere) Service
+
+echo "Updates to environment require a restart"
+
+echo "***"
+sleep 1
+echo "**"
+sleep 1
+echo "*"
 
 echo "Restarting AbilityERP (iDempiere) Service"
 
