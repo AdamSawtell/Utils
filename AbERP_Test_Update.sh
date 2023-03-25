@@ -45,6 +45,8 @@ export browser_title=$var3
 
 echo "What type of environment will thes be: d for Development or t for Test? (d/t)"
 
+read var4
+
 if [[ "$var4" == "d" ]]; then
   sudo hostnamectl set-hostname Dev
   echo "Host name changed to Dev"
@@ -62,7 +64,7 @@ echo "Bash updated for developer"
 
 # Update System Config Value
 
-echo "Updating AbilityERP (iDempiere) System Configuration to a non production snvironment"
+echo "Updating AbilityERP (iDempiere) System Configuration to a non production environment"
 
 PGUSER=adempiere
 PGPASSWORD=flamingo
