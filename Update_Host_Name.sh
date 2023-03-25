@@ -14,20 +14,21 @@ echo "**"
 sleep 1
 echo "*"
 
-echo " What type of environment will thes be: d for Development or t for Test? (d/t)"
+echo "What type of environment will this be: d for Development or t for Test? (d/t)"
 
-read Test
+read environment
 
-if [[ $Test == "d" ]]; then
-
-sudo hostnamectl set-hostname Dev
-        echo "Host name changed to Dev"
-
+if [[ "$environment" == "d" ]]; then
+  sudo hostnamectl set-hostname Dev
+  echo "Host name changed to Dev"
+  
+elif [[ "$environment" == "t" ]]; then
+  sudo hostnamectl set-hostname Test
+  echo "Host name changed to Test"
+  
 else
-
-sudo hostnamectl set-hostname Test
-        echo "Host name changed to Test"
-
+  echo "Invalid environment specified: $environment"
+  exit 1
 fi
 
 echo "***"
