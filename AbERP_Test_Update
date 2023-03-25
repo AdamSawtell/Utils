@@ -114,6 +114,16 @@ else
   echo "Start process failed"
 fi
 
+sleep 1
+
 echo "Finished"
+
+echo "*"
+
+sleep 2
+
+echo "flamingologic.com.au"
+
+echo "*"
 
 EOF
