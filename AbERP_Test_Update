@@ -70,7 +70,7 @@ UPDATE ad_client SET description = 'Email Host Disabled - This is a Test site' W
 
 # Update Use Email For Login to No
 echo "Disable Email Login"
-UPDATE ad_sysconfig SET value = 'N' WHERE ad_sysconfig_id = 200214;
+UPDATE ad_sysconfig SET value = 'N' WHERE ad_sysconfig_id = 200014;
 
 # Update the ZK Browser title
 echo "Updating Browser Title"
