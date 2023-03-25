@@ -129,7 +129,7 @@ else
   echo "Stop process failed"
 fi
 
-echo "Starting AbilityERP (iDempiere) Service."
+echo "Starting AbilityERP (iDempiere) Service - This may take 30 sec."
 
 sleep 30
 
@@ -148,6 +148,8 @@ sleep 1
 echo "Finished"
 
 echo "*"
+
+echo "Your envbironment is now available to test"
 
 sleep 2
 
