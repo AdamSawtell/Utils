@@ -2,7 +2,7 @@
 
 
 
-
+# Business Partner details
 -- Business Partner 
 update C_BPartner bp
 set 
@@ -58,8 +58,8 @@ Email='Obfuscation'
 -- User
 update AD_User u
 set 
-Name='user' || u.ad_user_id, 
-Description='user' || u.ad_user_id
+Name='Flamingo User' || u.ad_user_id, 
+Description='FlamingoBP Test Data - Obfuscation' || u.ad_user_id
 where u.name <> 'SuperUser'
   and ((u.c_bpartner_id is null) 
     or (
