@@ -33,43 +33,42 @@ read var2
 echo "Please enter browser title:"
 read var3
 
-echo "Is this a Test or Development environment:"
-read var4
 
-echo "The values you entered are: $var1, $var2, $var3, and $var4"
+echo "The values you entered are: $var1, $var2, $var3"
 
 # Environment Variables
-export ad_client_id=var1
-export environment_ip=var2
-export browser_title=var3
-export environment_type=var4
+export ad_client_id=$var1
+export environment_ip=$var2
+export browser_title=$var3
 
 # Set Ubuntu Bash Host Name
 
 echo "What type of environment will thes be: d for Development or t for Test? (d/t)"
 
-read Test
-
-if [[ $Test == "d" ]]; then
-
-sudo hostnamectl set-hostname Dev
-        echo "Host name changed to Dev"
-
+if [[ "$var4" == "d" ]]; then
+  sudo hostnamectl set-hostname Dev
+  echo "Host name changed to Dev"
+  
+elif [[ "$var4" == "t" ]]; then
+  sudo hostnamectl set-hostname Test
+  echo "Host name changed to Test"
+  
 else
+  echo "Invalid environment specified: $var4"
+  exit 1
+fi
 
-sudo hostnamectl set-hostname Test
-        echo "Host name changed to Test"
-
+echo "Bash updated for developer"
 
 # Update System Config Value
 
-echo "Updating AbilityERP (iDempiere) System Configuration to a ${environment_type} Environment"
+echo "Updating AbilityERP (iDempiere) System Configuration to a non production snvironment"
 
-PGUSER = adempiere
-PGPASSWORD = flamingo
-PGHOST = ${environment_ip}
-PGPORT = 5432
-PGDATABASE = idempiere
+PGUSER=adempiere
+PGPASSWORD=flamingo
+PGHOST=${environment_ip}
+PGPORT=5432
+PGDATABASE=idempiere
 
 psql "postgresql://${PGUSER}:${PGPASSWORD}@${PGHOST}:${PGPORT}/${PGDATABASE}" << EOF
 
