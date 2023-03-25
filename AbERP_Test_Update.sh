@@ -30,6 +30,8 @@ read var1
 echo "Please enter envirnment IP address:"
 read var2
 
+echo "Ensure you have opened port 5432 in the enviroments security group to this IP, It is required to update Posgres Db"
+
 echo "Please enter browser title for new site:"
 read var3
 
