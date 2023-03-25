@@ -1,0 +1,37 @@
+#!/bin/bash
+
+# Script Purpose: Update new test enviroment system configurations
+# Script Name: TEST_Update_Script
+# Script Creater: Adam Sawtell
+# Created: 25/03/2023
+# Notes:
+
+
+# Disable Single Sign On (SSO)
+UPDATE ad_sysconfig SET value = 'N' WHERE ad_sysconfig_id = 200205;
+
+# Disable Client Email Host/ Server
+UPDATE ad_client SET smtphost = 'Disabled' WHERE ad_client_id = 1000002;
+UPDATE ad_client SET description = 'Email Host Disabled - This is a Test site' WHERE ad_client_id = 1000002;
+
+# Update Use Email For Login to No
+UPDATE ad_sysconfig SET value = 'N' WHERE ad_sysconfig_id = 200014;
+
+# Update the ZK Browser title
+UPDATE ad_sysconfig SET value = 'Test Browser Adam' WHERE ad_sysconfig_id = 1000003;
+
+# Update ZK Logo Small (Menu Page) Image
+UPDATE ad_sysconfig SET value = 'https://fllogo.s3.us-east-2.amazonaws.com/test+Flamingo+Logic+1+pic.jpg' WHERE ad_sysconfig_id = 1000001;
+
+# Update ZL Logo Large (Login Page)  Image
+UPDATE ad_sysconfig SET value = 'https://fllogo.s3.us-east-2.amazonaws.com/test+Flamingo+Logic+1+pic.jpg' WHERE ad_sysconfig_id = 1000000;
+
+#Copy and Paste into PGAdmin from here
+
+UPDATE ad_sysconfig SET value = 'N' WHERE ad_sysconfig_id = 200205;
+UPDATE ad_client SET smtphost = 'Disabled' WHERE ad_client_id = ########Add#######;
+UPDATE ad_client SET description = 'Email Host Disabled - This is a Test site' WHERE ad_client_id = ########Add#######;
+UPDATE ad_sysconfig SET value = 'N' WHERE ad_sysconfig_id = 200014;
+UPDATE ad_sysconfig SET value = '########Add#######' WHERE ad_sysconfig_id = 1000003;
+UPDATE ad_sysconfig SET value = 'https://fllogo.s3.us-east-2.amazonaws.com/test+Flamingo+Logic+1+pic.jpg' WHERE ad_sysconfig_id = 1000001;
+UPDATE ad_sysconfig SET value = 'https://fllogo.s3.us-east-2.amazonaws.com/test+Flamingo+Logic+1+pic.jpg' WHERE ad_sysconfig_id = 1000000;
