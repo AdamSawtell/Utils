@@ -92,7 +92,7 @@ psql "postgresql://${PGUSER}:${PGPASSWORD}@${PGHOST}:${PGPORT}/${PGDATABASE}" <<
 
 UPDATE ad_sysconfig SET value = 'N' WHERE ad_sysconfig_id = 200205;
 
-UPDATE ad_client SET smtphost = 'Disabled' WHERE ad_client_id = ${ad_client_id};
+UPDATE ad_client SET smtphost = 'Email Host Disabled - This is a Test site' WHERE ad_client_id = ${ad_client_id};
 UPDATE ad_client SET description = 'Email Host Disabled - This is a Test site' WHERE ad_client_id = ${ad_client_id};
 
 UPDATE ad_sysconfig SET value = 'N' WHERE ad_sysconfig_id = 200014;
