@@ -15,10 +15,6 @@
 # - Update ZL Logo Large (Login Page)  Image
 # - Restarts AbilityERP (iDempiere ) Service
 
-# Environment Variables
-ad_client_id = 1000002
-environment_ip = 3.27.10.3
-browser_title = AbERP Test
 
 echo "flamingologic.com.au"
 
@@ -27,6 +23,26 @@ sleep 1
 echo "**"
 sleep 1
 echo "*"
+
+echo "Please enter client id:"
+read var1
+
+echo "Please enter Envirnment IP address:"
+read var2
+
+echo "Please enter browser title:"
+read var3
+
+echo "Is this a Test or Development environment:"
+read var4
+
+echo "The values you entered are: $var1, $var2, $var3, and $var4"
+
+# Environment Variables
+ad_client_id = var1
+environment_ip = var2
+browser_title = var3
+environment_type = var4
 
 # Set Ubuntu Bash Host Name
 
@@ -47,7 +63,7 @@ sudo hostnamectl set-hostname Test
 
 # Update System Config Value
 
-echo "Updating AbilityERP (iDempiere) System Configuration to a TEST/ Dev Environment"
+echo "Updating AbilityERP (iDempiere) System Configuration to a ${environment_type} Environment"
 
 PGUSER = adempiere
 PGPASSWORD = flamingo
