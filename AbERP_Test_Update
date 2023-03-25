@@ -7,11 +7,16 @@
 # Notes: 
 # Outcomes:
 # - Disable Sigles Sign On (SSO)
+#### - Disable Client Email Host/ Server
 # - Update Use Email For Login to No
 # - Update the Browser title
 # - Update ZK Logo Small (Menu Page) Image
 # - Update ZL Logo Large (Login Page)  Image
+# - Restarts AbilityERP (iDempiere ) Service
 
+# Environment Variables
+ad_client_id = 1000002
+environment_ip = 3.27.10.3
 
 echo "flamingologic.com.au"
 
@@ -26,30 +31,33 @@ echo "*"
 
 echo "Updating AbilityERP (iDempiere) System Configuration to a TEST/ Dev Environment"
 
-ECHO
-
-PGUSER=adempiere
-PGPASSWORD=flamingo
-PGHOST=3.27.10.3
-PGPORT=5432
-PGDATABASE=idempiere
+PGUSER = adempiere
+PGPASSWORD = flamingo
+PGHOST = ${environment_ip}
+PGPORT = 5432
+PGDATABASE = idempiere
 
 psql "postgresql://${PGUSER}:${PGPASSWORD}@${PGHOST}:${PGPORT}/${PGDATABASE}" << EOF
 
 # Disable Single Sign On (SSO)
-UPDATE ad_sysconfig WHERE ad_sysconfig_id = 200205 SET value = N
+UPDATE ad_sysconfig SET value = 'N' WHERE ad_sysconfig_id = 200205;
+
+# Disable Client Email Host/ Server
+UPDATE ad_client SET smtphost = 'Disabled' WHERE ad_client_id = ${ad_client_id};
+UPDATE ad_client SET description = 'Email Host Disabled - This is a Test site' WHERE ad_client_id = ${ad_client_id};
 
 # Update Use Email For Login to No
-UPDATE ad_sysconfig WHERE ad_sysconfig_id = 200214 SET value = N
+UPDATE ad_sysconfig SET value = 'N' WHERE ad_sysconfig_id = 200214;
 
 # Update the ZK Browser title
-UPDATE ad_sysconfig WHERE ad_sysconfig_id = 200003 SET value = AbERP TEST Site
+UPDATE ad_sysconfig SET value = 'AbERP TEST Site' WHERE ad_sysconfig_id = 1000003;
 
 # Update ZK Logo Small (Menu Page) Image
-UPDATE ad_sysconfig WHERE ad_sysconfig_id = 1000001 SET value = https://fllogo.s3.us-east-2.amazonaws.com/test+Flamingo+Logic+1+pic.jpg
+UPDATE ad_sysconfig SET value = 'https://fllogo.s3.us-east-2.amazonaws.com/test+Flamingo+Logic+1+pic.jpg' WHERE ad_sysconfig_id = 1000001;
 
 # Update ZL Logo Large (Login Page)  Image
-UPDATE ad_sysconfig WHERE ad_sysconfig_id = 1000000 SET value = https://fllogo.s3.us-east-2.amazonaws.com/test+Flamingo+Logic+Small+pic.jpg
+PDATE ad_sysconfig SET value = 'https://fllogo.s3.us-east-2.amazonaws.com/test+Flamingo+Logic+1+pic.jpg' WHERE ad_sysconfig_id = 1000000;
+
 
 # Restarting AbilityERP (iDempiere) Service
 
