@@ -39,14 +39,14 @@ read var4
 echo "The values you entered are: $var1, $var2, $var3, and $var4"
 
 # Environment Variables
-ad_client_id = var1
-environment_ip = var2
-browser_title = var3
-environment_type = var4
+export ad_client_id=var1
+export environment_ip=var2
+export browser_title=var3
+export environment_type=var4
 
 # Set Ubuntu Bash Host Name
 
-echo " What type of environment will thes be: d for Development or t for Test? (d/t)"
+echo "What type of environment will thes be: d for Development or t for Test? (d/t)"
 
 read Test
 
