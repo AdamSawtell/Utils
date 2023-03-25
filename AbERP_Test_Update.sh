@@ -99,9 +99,9 @@ UPDATE ad_sysconfig SET value = 'N' WHERE ad_sysconfig_id = 200014;
 
 UPDATE ad_sysconfig SET value = '${browser_title}' WHERE ad_sysconfig_id = 1000003;
 
-UPDATE ad_sysconfig SET value = 'https://fllogo.s3.us-east-2.amazonaws.com/test+Flamingo+Logic+1+pic.jpg' WHERE ad_sysconfig_id = 1000001;
+UPDATE ad_sysconfig SET value = 'https://fllogo.s3.us-east-2.amazonaws.com/Flamingo+Logic+test+site+logo.jpg' WHERE ad_sysconfig_id = 1000001;
 
-UPDATE ad_sysconfig SET value = 'https://fllogo.s3.us-east-2.amazonaws.com/test+Flamingo+Logic+1+pic.jpg' WHERE ad_sysconfig_id = 1000000;
+UPDATE ad_sysconfig SET value = 'https://fllogo.s3.us-east-2.amazonaws.com/Flamingo+Logic+test+site+logo+large.jpg' WHERE ad_sysconfig_id = 1000000;
 
 EOF
 
