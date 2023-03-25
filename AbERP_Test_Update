@@ -8,7 +8,7 @@
 # Outcomes:
 # - Set Ubuntu bash Host Name
 # - Disable Sigles Sign On (SSO)
-#### - Disable Client Email Host/ Server
+# - Disable Client Email Host/ Server
 # - Update Use Email For Login to No
 # - Update the Browser title
 # - Update ZK Logo Small (Menu Page) Image
@@ -18,6 +18,7 @@
 # Environment Variables
 ad_client_id = 1000002
 environment_ip = 3.27.10.3
+browser_title = AbERP Test
 
 echo "flamingologic.com.au"
 
@@ -27,7 +28,7 @@ echo "**"
 sleep 1
 echo "*"
 
-# Set Ubuntu bash Host Name
+# Set Ubuntu Bash Host Name
 
 echo " What type of environment will thes be: d for Development or t for Test? (d/t)"
 
@@ -73,14 +74,14 @@ UPDATE ad_sysconfig SET value = 'N' WHERE ad_sysconfig_id = 200214;
 
 # Update the ZK Browser title
 echo "Updating Browser Title"
-UPDATE ad_sysconfig SET value = 'AbERP TEST Site' WHERE ad_sysconfig_id = 1000003;
+UPDATE ad_sysconfig SET value = '${browser_title}' WHERE ad_sysconfig_id = 1000003;
 
 # Update ZK Logo Small (Menu Page) Image
 echo "Updating Logos"
 UPDATE ad_sysconfig SET value = 'https://fllogo.s3.us-east-2.amazonaws.com/test+Flamingo+Logic+1+pic.jpg' WHERE ad_sysconfig_id = 1000001;
 
 # Update ZL Logo Large (Login Page)  Image
-PDATE ad_sysconfig SET value = 'https://fllogo.s3.us-east-2.amazonaws.com/test+Flamingo+Logic+1+pic.jpg' WHERE ad_sysconfig_id = 1000000;
+UPDATE ad_sysconfig SET value = 'https://fllogo.s3.us-east-2.amazonaws.com/test+Flamingo+Logic+1+pic.jpg' WHERE ad_sysconfig_id = 1000000;
 
 
 # Restarting AbilityERP (iDempiere) Service
