@@ -7,7 +7,7 @@
 # Windows included in obfuscation
 # - BUSINESS PARTNER
 # -- Contact User
-# -- Activity -- To Add
+# -- Activity
 # -- Activity (BP Accociates) -- To Add
 # -- Location
 # -- Bank Account
@@ -16,7 +16,8 @@
 
 
 
-# Business Partner details
+# Business Partner details - Support Reciever, Vendor Other BP Groups 
+
 -- Window: Business Partner 
 update C_BPartner bp
 set 
@@ -90,4 +91,88 @@ Fax='1',
 Description='FlamingoBP Test Data - Obfuscation',
 Email='Obfuscation'
 ;
+
+
+# Business Partner details - Employee
+
+-- Employee
+update AD_User u
+set 
+Name='FlamingoEmployee' || u.ad_user_id, 
+Description='FlamingoEmployee' || u.ad_user_id
+where u.name <> 'SuperUser'
+  and ((u.c_bpartner_id is null) 
+    or (
+      SELECT xbp.ISEMPLOYEE 
+      FROM C_BPARTNER xbp 
+      WHERE u.C_BPartner_ID = xbp.C_BPARTNER_ID) = 'Y')
+;
+
+
+-- Tab: Contact (User)
+update AD_User u
+set 
+Password='password', 
+Email='Obfuscation',  
+Phone='1', 
+Phone2='1', 
+Fax='1', 
+EmailUserPW=null, 
+EmailUser=null, 
+EmailVerify=null, 
+Birthday=null
+;
+
+-- Tab: Activity
+update C_ContactActivity
+set 
+Description = 'FlamingoBP Test Data - Obfuscation',
+Comments = 'FlamingoBP Test Data - Obfuscation'
+;
+
+-- Tab: Location
+update C_Location loc
+set 
+Address1='Obfuscation', 
+Address2='Obfuscation', 
+Address3='Obfuscation', 
+Address4='Obfuscation',
+city='Obfuscation',
+postal='1',
+c_region_id=171,
+c_country_id=122
+;
+
+-- Bank Account
+update C_BankAccount ba
+set AccountNo = 'BankAcct: '||ba.c_bankaccount_id
+;
+
+# Client Window
+
+
+-- Window: Support Receiver/ Client 
+update C_BPartner bp
+set
+AbERP_First_Name = 'Support',
+AbERP_Last_Name = 'Receiver',
+AbERP_Preferred_Name = 'Flamingo',
+AbERP_Middle_name = 'Flamingo',
+Phone = '1',
+AbERP_NDIS_Region = '1',
+AbERP_Addtl_Disability_Info = 'FlamingoBP Test Data - Obfuscation'
+;
+
+-- Window: Alert 
+update AbERP_Alert_SR
+set
+Name = 'FlamingoBP Test Data - Obfuscation',
+Description = 'FlamingoBP Test Data - Obfuscation'
+;
+
+
+
+
+
+
 
