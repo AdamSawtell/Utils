@@ -163,16 +163,21 @@ AbERP_NDIS_Region = '1',
 AbERP_Addtl_Disability_Info = 'FlamingoBP Test Data - Obfuscation'
 ;
 
--- Window: Alert 
+-- Tab: Alert 
 update AbERP_Alert_SR
 set
 Name = 'FlamingoBP Test Data - Obfuscation',
 Description = 'FlamingoBP Test Data - Obfuscation'
 ;
 
+-- Tab: BP Associations
+update AbERP_BP_Associations
+set
+Name = 'FlamingoBP Test Data - Obfuscation',
+Description = 'FlamingoBP Test Data - Obfuscation'
+;
 
-
-
-
+-- Tab: BP Associations
+-- No Updates Required
 
 
