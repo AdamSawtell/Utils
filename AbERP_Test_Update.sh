@@ -101,7 +101,7 @@ UPDATE ad_sysconfig SET value = '${browser_title}' WHERE ad_sysconfig_id = 10000
 
 UPDATE ad_sysconfig SET value = 'https://fllogo.s3.us-east-2.amazonaws.com/FL+Test+New+Small.jpg' WHERE ad_sysconfig_id = 1000001;
 
-UPDATE ad_sysconfig SET value = 'https://fllogo.s3.us-east-2.amazonaws.com/FL+Test+New+Large.jpg' WHERE ad_sysconfig_id = 1000000;
+UPDATE ad_sysconfig SET value = 'https://fllogo.s3.us-east-2.amazonaws.com/FL+Test+New+Large+Updated.jpg' WHERE ad_sysconfig_id = 1000000;
 
 EOF
 
