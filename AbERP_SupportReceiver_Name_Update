@@ -1,0 +1,133 @@
+#!/bin/bash
+
+# Script Purpose: To update all defind fields from Support Receiver or Business Partner to new naming
+# Script Name: AbERP Demo Update
+# Script Creater: Adam Sawtell
+# Created: 11/09/2023
+# Notes: 
+# Outcomes:
+# - Changes all denined fields to new naming
+# - 
+# - 
+# - 
+# - 
+
+# - Restarts AbilityERP (iDempiere ) Service
+
+
+echo "flamingologic.com.au"
+
+echo "***"
+sleep 1
+echo "**"
+sleep 1
+echo "*"
+
+echo "Please enter client id - this is unique to the customers build:"
+read var1
+
+echo "Please enter envirnment IP address:"
+read var2
+
+echo "Please enter the naming you would like to use for all fields, this is the naming that will replace all Support Reciever and many Business Partner naming fields:"
+read var3
+
+echo "Ensure you have opened port 5432 in the enviroments security group to this IP, It is required to update Posgres Db"
+
+
+echo "The values you entered are: $var1, $var2, $var3"
+
+# Environment Variables
+export ad_client_id=$var1
+export environment_ip=$var2
+export naming=$var3
+
+echo "This script will update all defind data fields to new naming:"
+echo "$var3"
+
+# Update System Config Value
+
+echo "Updating AbilityERP (iDempiere)"
+
+sleep 3
+
+echo "***"
+sleep 1
+echo "**"
+sleep 1
+echo "*"
+
+PGUSER=adempiere
+PGPASSWORD=flamingo
+PGHOST=${environment_ip}
+PGPORT=5432
+PGDATABASE=idempiere
+
+psql "postgresql://${PGUSER}:${PGPASSWORD}@${PGHOST}:${PGPORT}/${PGDATABASE}" << EOF
+
+UPDATE ad_sysconfig SET value = 'N' WHERE ad_sysconfig_id = 200205;
+
+UPDATE ad_client SET smtphost = 'Email Host Disabled - This is a Test site' WHERE ad_client_id = ${ad_client_id};
+UPDATE ad_client SET description = 'Email Host Disabled - This is a Test site' WHERE ad_client_id = ${ad_client_id};
+
+UPDATE ad_sysconfig SET value = 'N' WHERE ad_sysconfig_id = 200014;
+
+UPDATE ad_sysconfig SET value = 'AbERP Demo Site' WHERE ad_sysconfig_id = 1000003;
+
+
+
+EOF
+
+# Restarting AbilityERP (iDempiere) Service
+
+echo "Updates to environment require a restart"
+
+echo "***"
+sleep 1
+echo "**"
+sleep 1
+echo "*"
+
+echo "Restarting AbilityERP (iDempiere) Service"
+
+echo "Stopping AbilityERP (iDempiere) Service."
+
+sudo service idempiere stop
+
+if [ $? -eq 0 ]
+then
+  echo "AbilityERP (iDempeire) was successfully Stopped"
+  date
+else
+  echo "Stop process failed"
+fi
+
+echo "Starting AbilityERP (iDempiere) Service - This may take 30 sec."
+
+sleep 30
+
+sudo service idempiere start
+
+if [ $? -eq 0 ]
+then
+  echo "AbilityERP (iDempeire) was successfully Started"
+  date
+else
+  echo "Start process failed"
+fi
+
+sleep 1
+
+echo "Finished"
+
+echo "*"
+
+echo "Your envbironment is now available to test"
+
+sleep 2
+
+echo "flamingologic.com.au"
+
+echo "*"
+
+EOF
