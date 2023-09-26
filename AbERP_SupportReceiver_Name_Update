@@ -5,12 +5,8 @@
 # Script Creater: Adam Sawtell
 # Created: 11/09/2023
 # Notes: 
-# Outcomes:
-# - Changes all defined fields to new naming
-# - 
-# - 
-# - 
-# - 
+# Outcomes: Changes all designated 
+# - Changes all defined fields to new naming ad_field, name values to defind variable set in script.
 
 # - Restarts AbilityERP (iDempiere ) Service
 
