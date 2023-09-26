@@ -9,6 +9,10 @@
 # - Changes all defined fields to new naming ad_field, name values to defind variable set in script.
 # - Updates all defined fields to iscentrallymaintained = N
 
+# AbilityERP Core Windows Updated
+# - Support Reciever
+# - Incident Report
+
 # - Restarts AbilityERP (iDempiere ) Service
 
 
