@@ -61,13 +61,19 @@ PGDATABASE=idempiere
 
 psql "postgresql://${PGUSER}:${PGPASSWORD}@${PGHOST}:${PGPORT}/${PGDATABASE}" << EOF
 
+UPDATE ad_window SET name = '$var3' WHERE ad_window_ID = 1000024;
+
+UPDATE ad_menu SET name = '$var3' WHERE ad_menu_ID = 1000008;
+
+UPDATE ad_menu SET name = '$var3' WHERE ad_menu_ID = 1000034;
+
 UPDATE ad_field SET name = '$var3' WHERE ad_field_ID = 1000405;
 
 UPDATE ad_field SET name = '$var3' WHERE ad_field_ID = 1000528;
 
 UPDATE ad_field SET name = '$var3' WHERE ad_field_ID = 1000461;
 
-UPDATE ad_field SET name = '$var3' WHERE ad_field_ID = 1000832;
+UPDATE ad_field SET name = '$var3' WHERE ad_field_ID = 1000476;
 
 UPDATE ad_field SET name = '$var3' WHERE ad_field_ID = 1000540;
 
