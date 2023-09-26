@@ -98,6 +98,9 @@ UPDATE ad_field SET iscentrallymaintained = 'N' WHERE ad_field_ID = 1001514;
 UPDATE ad_field SET name = '$var3' WHERE ad_field_ID = 1001042;
 UPDATE ad_field SET iscentrallymaintained = 'N' WHERE ad_field_ID = 1001042;
 
+UPDATE ad_field SET name = '$var3' WHERE ad_field_ID = 1000621;
+UPDATE ad_field SET iscentrallymaintained = 'N' WHERE ad_field_ID = 1000621;
+
 
 EOF
 
