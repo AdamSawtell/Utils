@@ -65,8 +65,6 @@ PGDATABASE=idempiere
 
 psql "postgresql://${PGUSER}:${PGPASSWORD}@${PGHOST}:${PGPORT}/${PGDATABASE}" << EOF
 
-# Support Receiver Window
-
 UPDATE ad_field SET name = 'var3' WHERE ad_field_ID = 1000461;
 
 UPDATE ad_field SET name = 'var3' WHERE ad_field_ID = 1000528;
