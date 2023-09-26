@@ -7,6 +7,7 @@
 # Notes: 
 # Outcomes: Changes all designated 
 # - Changes all defined fields to new naming ad_field, name values to defind variable set in script.
+# - Updates all defined fields to iscentrallymaintained = N
 
 # - Restarts AbilityERP (iDempiere ) Service
 
@@ -62,26 +63,40 @@ PGDATABASE=idempiere
 psql "postgresql://${PGUSER}:${PGPASSWORD}@${PGHOST}:${PGPORT}/${PGDATABASE}" << EOF
 
 UPDATE ad_window SET name = '$var3' WHERE ad_window_ID = 1000024;
+UPDATE ad_window SET iscentrallymaintained = 'N' WHERE ad_window_ID = 1000024;
+
+UPDATE ad_tab SET name = '$var3' WHERE ad_tab_ID = 1000027;
+UPDATE ad_tab SET iscentrallymaintained = 'N' WHERE ad_tab_ID = 1000027;
 
 UPDATE ad_menu SET name = '$var3' WHERE ad_menu_ID = 1000008;
+UPDATE ad_menu SET iscentrallymaintained = 'N' WHERE ad_menu_ID = 1000008;
 
 UPDATE ad_menu SET name = '$var3' WHERE ad_menu_ID = 1000034;
+UPDATE ad_menu SET iscentrallymaintained = 'N' WHERE ad_menu_ID = 1000034;
 
 UPDATE ad_field SET name = '$var3' WHERE ad_field_ID = 1000405;
+UPDATE ad_field SET iscentrallymaintained = 'N' WHERE ad_field_ID = 1000405;
 
 UPDATE ad_field SET name = '$var3' WHERE ad_field_ID = 1000528;
+UPDATE ad_field SET iscentrallymaintained = 'N' WHERE ad_field_ID = 1000528;
 
 UPDATE ad_field SET name = '$var3' WHERE ad_field_ID = 1000461;
+UPDATE ad_field SET iscentrallymaintained = 'N' WHERE ad_field_ID = 1000461;
 
 UPDATE ad_field SET name = '$var3' WHERE ad_field_ID = 1000476;
+UPDATE ad_field SET iscentrallymaintained = 'N' WHERE ad_field_ID = 1000476;
 
 UPDATE ad_field SET name = '$var3' WHERE ad_field_ID = 1000540;
+UPDATE ad_field SET iscentrallymaintained = 'N' WHERE ad_field_ID = 1000540;
 
 UPDATE ad_field SET name = '$var3' WHERE ad_field_ID = 1001474;
+UPDATE ad_field SET iscentrallymaintained = 'N' WHERE ad_field_ID = 1001474;
 
 UPDATE ad_field SET name = '$var3' WHERE ad_field_ID = 1001514;
+UPDATE ad_field SET iscentrallymaintained = 'N' WHERE ad_field_ID = 1001514;
 
 UPDATE ad_field SET name = '$var3' WHERE ad_field_ID = 1001042;
+UPDATE ad_field SET iscentrallymaintained = 'N' WHERE ad_field_ID = 1001042;
 
 
 EOF
