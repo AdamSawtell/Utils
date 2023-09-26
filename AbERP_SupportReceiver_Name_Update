@@ -65,9 +65,9 @@ PGDATABASE=idempiere
 
 psql "postgresql://${PGUSER}:${PGPASSWORD}@${PGHOST}:${PGPORT}/${PGDATABASE}" << EOF
 
-UPDATE ad_field SET name = 'var3' WHERE ad_field_ID = 1000461;
+UPDATE ad_field SET name = '$var3' WHERE ad_field_ID = 1000461;
 
-UPDATE ad_field SET name = 'var3' WHERE ad_field_ID = 1000528;
+UPDATE ad_field SET name = '$var3' WHERE ad_field_ID = 1000528;
 
 
 EOF
@@ -116,7 +116,7 @@ echo "Finished"
 
 echo "*"
 
-echo "Your envbironment is now available to test"
+echo "Your environment is now available to test - Support Receiver naming has been updted to yur preferred language"
 
 sleep 2
 
