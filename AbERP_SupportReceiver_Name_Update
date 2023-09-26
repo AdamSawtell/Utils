@@ -6,7 +6,7 @@
 # Created: 11/09/2023
 # Notes: 
 # Outcomes:
-# - Changes all denined fields to new naming
+# - Changes all defined fields to new naming
 # - 
 # - 
 # - 
@@ -65,15 +65,11 @@ PGDATABASE=idempiere
 
 psql "postgresql://${PGUSER}:${PGPASSWORD}@${PGHOST}:${PGPORT}/${PGDATABASE}" << EOF
 
-## UPDATE ad_sysconfig SET value = 'N' WHERE ad_sysconfig_id = 200205;
+# Support Receiver Window
 
-## UPDATE ad_client SET smtphost = 'Email Host Disabled - This is a Test site' WHERE ad_client_id = ${ad_client_id};
-## UPDATE ad_client SET description = 'Email Host Disabled - This is a Test site' WHERE ad_client_id = ${ad_client_id};
+UPDATE ad_field SET name = 'var3' WHERE ad_field_ID = 1000461;
 
-
-
-
-
+UPDATE ad_field SET name = 'var3' WHERE ad_field_ID = 1000528;
 
 
 EOF
