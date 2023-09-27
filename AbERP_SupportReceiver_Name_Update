@@ -12,6 +12,14 @@
 # AbilityERP Core Windows Updated
 # - Support Reciever
 # - Incident Report
+# - Sales Oppertunity
+# - Bp Associations
+# - Animal
+# - Login
+# - Service Agreement (Project)
+# - Service Booking
+# - Invocie (customer)
+# - Plan Assessment
 
 # - Restarts AbilityERP (iDempiere ) Service
 
@@ -104,6 +112,39 @@ UPDATE ad_field SET iscentrallymaintained = 'N' WHERE ad_field_ID = 1001042;
 
 UPDATE ad_field SET name = '$var3' WHERE ad_field_ID = 1000621;
 UPDATE ad_field SET iscentrallymaintained = 'N' WHERE ad_field_ID = 1000621;
+
+UPDATE ad_field SET name = '$var3' WHERE ad_field_ID = 62167;
+UPDATE ad_field SET iscentrallymaintained = 'N' WHERE ad_field_ID = 62167;
+
+UPDATE ad_field SET name = '$var3' WHERE ad_field_ID = 1000162;
+UPDATE ad_field SET iscentrallymaintained = 'N' WHERE ad_field_ID = 1000162;
+
+UPDATE ad_field SET name = '$var3' WHERE ad_field_ID = 1000033;
+UPDATE ad_field SET iscentrallymaintained = 'N' WHERE ad_field_ID = 1000033;
+
+UPDATE ad_field SET name = '$var3' WHERE ad_field_ID = 1000077;
+UPDATE ad_field SET iscentrallymaintained = 'N' WHERE ad_field_ID = 1000077;
+
+UPDATE ad_field SET name = '$var3' WHERE ad_field_ID = 1005649;
+UPDATE ad_field SET iscentrallymaintained = 'N' WHERE ad_field_ID = 1005649;
+
+UPDATE ad_field SET name = '$var3' WHERE ad_field_ID = 1003509;
+UPDATE ad_field SET iscentrallymaintained = 'N' WHERE ad_field_ID = 1003509;
+
+UPDATE ad_field SET name = '$var3' WHERE ad_field_ID = 1003574;
+UPDATE ad_field SET iscentrallymaintained = 'N' WHERE ad_field_ID = 1003574;
+
+UPDATE ad_field SET name = '$var3' WHERE ad_field_ID = 1006609;
+UPDATE ad_field SET iscentrallymaintained = 'N' WHERE ad_field_ID = 1006609;
+
+UPDATE ad_field SET name = '$var3' WHERE ad_field_ID = 1000354;
+UPDATE ad_field SET iscentrallymaintained = 'N' WHERE ad_field_ID = 1000354;
+
+UPDATE ad_field SET name = '$var3' WHERE ad_field_ID = 1001133;
+UPDATE ad_field SET iscentrallymaintained = 'N' WHERE ad_field_ID = 1001133;
+
+UPDATE ad_field SET name = '$var3' WHERE ad_field_ID = 1002987;
+UPDATE ad_field SET iscentrallymaintained = 'N' WHERE ad_field_ID = 1002987;
 
 
 EOF
