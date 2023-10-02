@@ -146,6 +146,19 @@ UPDATE ad_field SET iscentrallymaintained = 'N' WHERE ad_field_ID = 1001133;
 UPDATE ad_field SET name = '$var3' WHERE ad_field_ID = 1002987;
 UPDATE ad_field SET iscentrallymaintained = 'N' WHERE ad_field_ID = 1002987;
 
+UPDATE PA_DocumentStatus SET name = 'My Clients' WHERE PA_DocumentStatus_ID=1000000;
+
+UPDATE AD_Ref_List SET name = '$var3' WHERE AD_Ref_List_ID=1000000;
+
+UPDATE AD_Ref_List SET name = 'Client and Employee' WHERE AD_Ref_List_ID=1000002;
+
+UPDATE ad_field SET name = 'Is the clients family or guardian aware of the incident?' WHERE ad_field_ID = 1000634;
+UPDATE ad_field SET iscentrallymaintained = 'N' WHERE ad_field_ID = 1000634;
+
+UPDATE ad_field SET name = 'Why has the clients family or guardian not been notified?' WHERE ad_field_ID = 1000635;
+UPDATE ad_field SET iscentrallymaintained = 'N' WHERE ad_field_ID = 1000635;
+
+UPDATE AD_Window SET name = 'Client - System' WHERE AD_Window_ID=109;
 
 EOF
 
